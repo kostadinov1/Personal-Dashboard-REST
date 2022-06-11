@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model
 from rest_framework import generics as api_view
-
+from rest_framework.authtoken import views as auth_views
 from web.accounts.serizlizers import CreateUserSerializer
+
 
 UserModel = get_user_model()
 
@@ -11,7 +12,7 @@ class RegisterView(api_view.CreateAPIView):
     serializer_class = CreateUserSerializer
 
 
-class LoginView(api_view.CreateAPIView):
+class LoginView(auth_views.ObtainAuthToken):
     pass
 
 

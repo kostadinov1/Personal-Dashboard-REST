@@ -22,3 +22,7 @@ class CreateUserSerializer(serializers.ModelSerializer):
         # get the instance and pop its password
         result.pop('password')
         return result
+
+    def validate(self, date):
+        # invoke password validators
+        return super(CreateUserSerializer, self).validate(date)

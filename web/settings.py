@@ -27,7 +27,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'rest_framework',
+    # TOKEN AUTHENTICATION - DIFFERENT DOMAIN USE (LOCAL)
+    'rest_framework.authtoken',
     'corsheaders',
+
 
     'web.accounts',
     'web.core',
@@ -43,6 +46,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# REST FRAMEWORK TOKEN AUTHENTICATION - DIFFERENT DOMAIN USE (LOCAL)
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
+}
 
 ROOT_URLCONF = 'web.urls'
 
