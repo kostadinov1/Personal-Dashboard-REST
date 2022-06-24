@@ -13,7 +13,7 @@ class Activity(models.Model):
     NAME_MAX_LEN = 30
 
     name = models.CharField(max_length=NAME_MAX_LEN)
-    type = models.ForeignKey(ActivityType)
+    # type = models.ForeignKey(ActivityType)
 
     description = models.TextField(null=True, blank=True)
 
@@ -33,7 +33,7 @@ class Exercise(models.Model):
     NAME_MAX_LEN = 30
 
     name = models.CharField(max_length=NAME_MAX_LEN)
-    type = models.ForeignKey(ExerciseType, )
+    # type = models.ForeignKey(ExerciseType, )
     description = models.TextField(null=True, blank=True)
     calories_burned = models.PositiveIntegerField()
     image = models.ImageField()

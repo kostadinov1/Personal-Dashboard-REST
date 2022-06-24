@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'web.core',
     'web.physical_activities',
     'web.periodization',
-    
+    'web.dieting'
 ]
 
 MIDDLEWARE = [
