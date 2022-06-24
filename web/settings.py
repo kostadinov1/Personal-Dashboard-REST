@@ -34,6 +34,9 @@ INSTALLED_APPS = [
 
     'web.accounts',
     'web.core',
+    'web.physical_activities',
+    'web.periodization',
+    
 ]
 
 MIDDLEWARE = [
