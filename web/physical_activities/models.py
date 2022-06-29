@@ -22,10 +22,13 @@ class Activity(models.Model):
     distance = models.PositiveIntegerField(null=True, blank=True)
     pace = models.PositiveIntegerField(null=True, blank=True)
     speed = models.PositiveIntegerField(null=True, blank=True)
+    heart_rate = models.PositiveIntegerField(null=True, blank=True)
     rpe = models.PositiveIntegerField(null=True, blank=True)
 
     type = models.ForeignKey(ActivityType, on_delete=models.CASCADE)
     goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
+
+# =========================================================================================================
 
 
 class ExerciseType(models.Model):
@@ -43,6 +46,8 @@ class Exercise(models.Model):
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    cues = models.TextField(null=True, blank=True)
 
     # BODYBUILDING METRICS
     reps = models.PositiveIntegerField(null=True, blank=True)
