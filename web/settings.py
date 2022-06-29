@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'web.periodization',
     'web.dieting'
 ]
+SITE_ID = 1
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -55,6 +56,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     ]
 }
 
@@ -122,3 +124,6 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.AppUser'
+
+
+

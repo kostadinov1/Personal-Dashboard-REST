@@ -35,6 +35,7 @@ class Exercise(models.Model):
     name = models.CharField(max_length=NAME_MAX_LEN)
     type = models.ForeignKey(ExerciseType, on_delete=models.DO_NOTHING, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    tempo = []
 
     calories_burned = models.PositiveIntegerField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -42,3 +43,7 @@ class Exercise(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
 
+class Break(models.Model):
+    name = models.CharField(null=True, blank=True)
+    duration = models.PositiveIntegerField(null=False, blank=False)
+    description = models.TextField(null=True, blank=True)

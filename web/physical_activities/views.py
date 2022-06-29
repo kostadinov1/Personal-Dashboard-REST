@@ -6,7 +6,6 @@ from web.physical_activities.serializers import CreateExerciseSerializer, ListEx
     EditActivitySerializer, DeleteActivitySerializer
 
 
-
 class CreateExerciseView(api_generic_views.CreateAPIView):
     queryset = Exercise.objects.all()
     serializer_class = CreateExerciseSerializer
@@ -25,6 +24,8 @@ class DeleteExerciseView(api_generic_views.DestroyAPIView):
 class ListExercisesView(api_generic_views.ListAPIView):
     queryset = Exercise.objects.all()
     serializer_class = ListExercisesSerializer
+
+
 
 
 # ==========================================================
