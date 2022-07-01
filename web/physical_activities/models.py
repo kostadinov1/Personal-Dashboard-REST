@@ -26,7 +26,7 @@ class Activity(models.Model):
     rpe = models.PositiveIntegerField(null=True, blank=True)
 
     type = models.ForeignKey(ActivityType, on_delete=models.CASCADE)
-    goal = models.ForeignKey(Goal, on_delete=models.CASCADE)
+    goal = models.ForeignKey(Goal, on_delete=models.CASCADE, blank=True, null=True)
 
 # =========================================================================================================
 

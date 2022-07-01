@@ -38,9 +38,9 @@ class MicroCycle(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     block_name = models.CharField(max_length=30, blank=True, null=True)
 
-    goals = models.ForeignKey(Goal, on_delete=models.CASCADE)
-    mini_goals = models.ForeignKey(MiniGoal, on_delete=models.CASCADE)
-    defenders = models.ForeignKey(Defender, on_delete=models.CASCADE)
+    goals = models.ForeignKey(Goal, on_delete=models.CASCADE, blank=True, null=True)
+    mini_goals = models.ForeignKey(MiniGoal, on_delete=models.CASCADE, blank=True, null=True)
+    defenders = models.ForeignKey(Defender, on_delete=models.CASCADE, blank=True, null=True)
 
     activities = []
     meals = []
@@ -56,10 +56,10 @@ class MesoCycle(models.Model):
     description = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    micro_cycles = models.ForeignKey(MicroCycle, on_delete=models.CASCADE)
-    goals = models.ForeignKey(Goal, on_delete=models.CASCADE)
-    mini_goals = models.ForeignKey(MiniGoal, on_delete=models.CASCADE)
-    defenders = models.ForeignKey(Defender, on_delete=models.CASCADE)
+    micro_cycles = models.ForeignKey(MicroCycle, on_delete=models.CASCADE, blank=True, null=True)
+    goals = models.ForeignKey(Goal, on_delete=models.CASCADE, blank=True, null=True)
+    mini_goals = models.ForeignKey(MiniGoal, on_delete=models.CASCADE, blank=True, null=True)
+    defenders = models.ForeignKey(Defender, on_delete=models.CASCADE, blank=True, null=True)
 
 
 # MACRO DURATION = 1 YEAR
@@ -72,9 +72,9 @@ class MacroCycle(models.Model):
     description = models.TextField(blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
-    meso_cycles = models.ForeignKey(MesoCycle, on_delete=models.CASCADE)
-    goals = models.ForeignKey(Goal, on_delete=models.CASCADE)
-    mini_goals = models.ForeignKey(MiniGoal, on_delete=models.CASCADE)
-    defenders = models.ForeignKey(Defender, on_delete=models.CASCADE)
+    meso_cycles = models.ForeignKey(MesoCycle, on_delete=models.CASCADE, blank=True, null=True)
+    goals = models.ForeignKey(Goal, on_delete=models.CASCADE, blank=True, null=True)
+    mini_goals = models.ForeignKey(MiniGoal, on_delete=models.CASCADE, blank=True, null=True)
+    defenders = models.ForeignKey(Defender, on_delete=models.CASCADE, blank=True, null=True)
 
 
