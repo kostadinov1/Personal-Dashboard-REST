@@ -51,6 +51,7 @@ class Exercise(models.Model):
 
     # BODYBUILDING METRICS
     reps = models.PositiveIntegerField(null=True, blank=True)
+    sets = models.PositiveIntegerField(null=True, blank=True)
     weights_in_kg = models.PositiveIntegerField(null=True, blank=True)
     tempo = []
     calories_burned = models.PositiveIntegerField(null=True, blank=True)

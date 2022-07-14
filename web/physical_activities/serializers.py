@@ -6,8 +6,13 @@ from web.physical_activities.models import Exercise, Activity
 class CreateExerciseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Exercise
-        fields = '__all__'
+        fields = ('name', 'description', 'image', 'cues',
+                  'reps', 'sets', 'weights_in_kg', 'tempo', 'calories_burned',
+                  'break_in_seconds', 'type')
 
+    # def create(self, validated_data):
+    #     validated_data['user'] = self.context['request'].user
+    #     return super().create(validated_data)
 
 class EditExerciseSerializer(serializers.ModelSerializer):
     class Meta:

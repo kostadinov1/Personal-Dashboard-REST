@@ -6,29 +6,30 @@ from web.periodization.models import MacroCycle, MesoCycle, MicroCycle, Goal, Mi
 
 @admin.register(MacroCycle)
 class MacroCycleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
 
 
 @admin.register(MesoCycle)
 class MesoCycleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
 
 
 @admin.register(MicroCycle)
 class MicroCycleAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
 
 
 @admin.register(Goal)
 class GoalAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
 
 
 @admin.register(MiniGoal)
 class MiniGoalAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
 
 
 @admin.register(Defender)
 class DefenderAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
+

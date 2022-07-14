@@ -10,6 +10,16 @@ class CreateExerciseView(api_generic_views.CreateAPIView):
     queryset = Exercise.objects.all()
     serializer_class = CreateExerciseSerializer
 
+    def post(self, request, *args, **kwargs):
+        response = super().post(request, *args, **kwargs)
+
+        return response
+
+
+class ViewSingleExerciseView(api_generic_views.RetrieveAPIView):
+    queryset = Exercise.objects.all()
+    serializer_class = CreateExerciseSerializer
+
 
 class EditExerciseView(api_generic_views.UpdateAPIView):
     queryset = Exercise.objects.all()
@@ -24,8 +34,6 @@ class DeleteExerciseView(api_generic_views.DestroyAPIView):
 class ListExercisesView(api_generic_views.ListAPIView):
     queryset = Exercise.objects.all()
     serializer_class = ListExercisesSerializer
-
-
 
 
 # ==========================================================

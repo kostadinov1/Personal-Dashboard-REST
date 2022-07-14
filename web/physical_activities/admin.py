@@ -5,21 +5,22 @@ from web.physical_activities.models import Exercise, Activity, ActivityType, Exe
 
 @admin.register(Exercise)
 class ExerciseAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'type',)
 
 
 @admin.register(ExerciseType)
 class ExerciseTypeAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
 
 
 @admin.register(Activity)
 class ActivityAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'type',)
 
 
 @admin.register(ActivityType)
 class ActivityTypeAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name',)
+
 
 
