@@ -34,7 +34,7 @@ class Activity(models.Model):
 class ExerciseType(models.Model):
     NAME_MAX_LEN = 30
 
-    name = models.CharField(max_length=NAME_MAX_LEN, null=False, blank=False, default='General')
+    name = models.CharField(max_length=NAME_MAX_LEN, null=False, blank=False, default='General', unique=True)
     description = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
 
@@ -42,16 +42,14 @@ class ExerciseType(models.Model):
 class Exercise(models.Model):
     NAME_MAX_LEN = 30
 
-    name = models.CharField(max_length=NAME_MAX_LEN, null=False, blank=False, default='Movement')
+    name = models.CharField(max_length=NAME_MAX_LEN, null=False, blank=False, default='Movement', unique=True)
     description = models.TextField(null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
-
-    cues = models.TextField(null=True, blank=True)
-
     # BODYBUILDING METRICS
     reps = models.PositiveIntegerField(null=True, blank=True)
     sets = models.PositiveIntegerField(null=True, blank=True)
+    cues = models.TextField(null=True, blank=True)
     weights_in_kg = models.PositiveIntegerField(null=True, blank=True)
     tempo = []
     calories_burned = models.PositiveIntegerField(null=True, blank=True)

@@ -1,22 +1,12 @@
 from django.contrib import admin
 
-# Register your models here.
-from web.periodization.models import MacroCycle, MesoCycle, MicroCycle, Goal, MiniGoal, Defender
+from web.periodization.models import TimeCycle, Goal, MiniGoal, Defender
 
 
-@admin.register(MacroCycle)
+@admin.register(TimeCycle)
 class MacroCycleAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
-
-@admin.register(MesoCycle)
-class MesoCycleAdmin(admin.ModelAdmin):
-    list_display = ('name',)
-
-
-@admin.register(MicroCycle)
-class MicroCycleAdmin(admin.ModelAdmin):
-    list_display = ('name',)
 
 
 @admin.register(Goal)

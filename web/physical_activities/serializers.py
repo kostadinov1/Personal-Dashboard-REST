@@ -3,8 +3,10 @@ from rest_framework import serializers
 from web.physical_activities.models import Exercise, Activity
 
 
+# TODO: add type serializer
 class CreateExerciseSerializer(serializers.ModelSerializer):
     class Meta:
+
         model = Exercise
         fields = ('name', 'description', 'image', 'cues',
                   'reps', 'sets', 'weights_in_kg', 'tempo', 'calories_burned',
