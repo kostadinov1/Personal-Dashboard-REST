@@ -49,7 +49,7 @@ class EditActivityView(api_generic_views.CreateAPIView):
     serializer_class = EditActivitySerializer
 
 
-class DeleteActivityView(api_generic_views.CreateAPIView):
+class DeleteActivityView(api_generic_views.DestroyAPIView):
     queryset = Activity.objects.all()
     serializer_class = DeleteActivitySerializer
 
